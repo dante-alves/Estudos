@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <article>
+        <form action="cadastro.php" method="get">
+            <fieldset>
+                <p>
+                    <label for="inome">Nome</label>
+                    <input type="text" name="nome" id="inome">
+                </p>
+                <p>
+                    <label for="icpf">CPF</label>
+                    <input type="text" name="cpf" id="icpf">
+                </p>
+                <p>
+                    <label for="iemail">Email</label>
+                    <input type="email" name="email" id="iemail">
+                </p>
+                <p>
+                    <label for="icidade"><strong>Selecione uma Cidade</strong></label> <br>
+                    <input type="text" name="cidade" id="icidade" list="opcidade">
+                    <datalist id="opcidade">
+                        <option value="João Pessoa">João Pessoa</option>
+                        <option value="Campina Grande">Campina Grande</option>
+                    </datalist>
+                </p>
+                <p>
+                    <label for="icursos"><strong>Selecione os cursos:</strong></label> <br>
+                    <input type="checkbox" name="android" id="iandroid"> <label for="iandroid">Android</label><br>
+                    <input type="checkbox" name="python" id="ipython"><label for="ipython">Python</label> <br>
+                    <input type="checkbox" name="html" id="ihtml"><label for="ihtml">HTML/CSS</label><br>
+                    <input type="checkbox" name="javascript" id="ijavascript"><label for="ijavascript">Javascript</label>
+                </p>
+                <p>
+                    <label for="iidade">Selecione a Faixa Etária de Idade</label>
+                    <br>
+                    <input type="radio" name="idade" id="18-25" checked> <label for="18-25">18 a 25 anos</label> <br>
+                    <input type="radio" name="idade" id="26-30"> <label for="26-30">26 a 30 anos</label> <br>
+                    <input type="radio" name="idade" id="31-45"> <label for="31-45">31 a 45 anos</label> <br>
+                    <input type="radio" name="idade" id="45-61"> <label for="45-61">45 a 61 anos</label> <br>
+                </p>
+            </fieldset>
+        </form>
+    </article>
+</body>
+</html>

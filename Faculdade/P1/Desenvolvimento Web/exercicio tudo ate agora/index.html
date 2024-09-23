@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre mim</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+    
+        img {
+            width: 150px;
+            border-style: groove;
+            border-color: brown;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.356);
+        }
+
+        input {
+            margin: 5px;
+        }
+        #ddd {
+            width: 30px;
+        }
+        
+        #container {
+            display: inline-flex;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Sobre mim</h1>
+    <img src="WhatsApp Image 2024-08-11 at 18.46.21.jpeg" alt="">
+    <p>Eu me chamo <b>Dante</b>, vim de uma cidade chamada <i>Manaíra</i>, no interior da <br> <i>Paraíba</i>. <hr> Algumas coisas sobre mim são:</p> 
+    
+    <h2>Um pouco da minha história:</h2>
+    <ol type="1"> 
+        <li>Aos 18 anos, vim para João Pessoa</li>
+        <li>Cursei Psicologia na UFPB por 2 anos</li>
+        <li>Não estava me identificando na área, e comecei a estudar programação, onde me identifiquei completamente</li>
+        <li>No ano de 2024, troquei de curso para Ciência da Computação.</li>
+    </ol>
+
+    <h2>Curiosidades</h2>
+    <ul type="circle"> 
+        <li>Gosto muito de jogar</li>
+        <li>Grande fã de Breaking Bad</li>
+        <li>Grande fã dos jogos de Hideo Kojima</li>
+        <li>Estou viciado em estudar programação!!!</li>
+        <li>Fiz esse exercício enquanto ouvia <a href="https://www.youtube.com/watch?v=p3N4ZEAbEho&t=2525s" target="_blank">Esse vídeo</a> de fundo.</li>
+    </ul>
+    <h2> Formulário</h2>
+    <form action="">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" required>
+            <br>
+            
+            <label for="idade">Idade</label>
+            <input type="number" name ="idade" required>
+            <br>
+            
+            <label for="sexo">Sexo</label>
+            <input type="radio" name="sexo" checked> Masculino
+            <input type="radio" name="sexo"> Feminino
+            <br>
+            <label for="email">Email</label>
+            <input type="email" name ="email"placeholder="Ex: joao123@gmail.com" required>
+            <br>
+            <label for="endereco">Endereço</label>
+            <input type="text" name="endereco" required>
+            <br>
+            <label for="cidade">Cidade</label>
+            <input type="text" name ="cidade" required>
+            <br>
+            
+            <div id="container">
+                <label for="telefone">Telefone</label>
+                <div>
+                    <input type="text" name = "telefone1" required maxlength="2" placeholder="DDD" id="ddd" required>
+                    <input type="text" name = "telefone2" required maxlength="9" placeholder="Número" id="num" required>
+                </div>
+            </div>
+            <br>
+        </fieldset>
+
+        <label for="user">Usuário</label>
+        <input type="text" name = "user" required>
+        <br>
+        <label for="senha">Senha</label>
+        <input type="text" name = "senha" required>
+        <br>
+
+        <label for="select">Qual o seu preferido?</label>
+        <select name="select" id="sel">
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="js">JavaScript</option>
+        </select>
+        <br>
+        <input type="submit" value="Enviar">
+        <input type="reset">
+    </form>
+   
+</body>
+</html>

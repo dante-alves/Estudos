@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List</title>
+    <style>
+        label {
+            display: block;
+        }
+    
+    </style>
+</head>
+<body>
+    
+        <h1>Tarefas</h1>
+        <p>
+            <label for="tarefa">Tarefa</label>
+            <input type="text" name="tarefa" id="itarefa" autocomplete="off" placeholder="Adicionar Tarefa...">
+        </p>
+        <p>
+            <button type="submit" id="iadd" onclick="adicionar()">Adicionar</button>
+            <button type="submit" id="ilimpar" onclick="limpar()">Limpar Lista</button>
+        </p>
+
+        <div id="iresposta">
+            <h2>Lista de tarefas</h2>
+        </div>
+
+        <script>
+            function adicionar() {
+                //Atribuir as variáveis aos elementos do html
+                var tarefa = document.getElementById('itarefa').value
+                var resposta = document.getElementById('iresposta')
+                
+                //Adicionar a tarefa na lista
+                resposta.innerHTML += `<p><input type="checkbox">${tarefa}</p>`
+                
+                //Limpar o input 
+                document.getElementById('itarefa').value = ''
+            }
+
+            function limpar () {
+                //Limpar os itens ao clicar em limpar lista
+                document.getElementById('iresposta').innerHTML = '<h2>Lista de tarefas</h2>'
+            }
+        </script>
+
+
+</body>
+</html>
