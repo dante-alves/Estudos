@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+@media screen and (min-width:600px) and (max-width:992px) {
+    body {
+        background: black url(../imagens/bckgrnd.jpg) fixed;
+
+    }
+    
+    /* div da imagem*/
+    div.imagem {
+        position: absolute;
+        left: 15%;
+        top: 40%;
+    }
+   
+    /* main responsivo para telas menores */
+    main {
+        width: 65vw;
+        height: 75vh;
+        left: 60%;
+    }
+
+    /* Config da div header */
+    div#header {
+        font-size: 1.4em;
+        line-height: 3em; 
+    }
+
+    div#header > p {
+        font-size: 1.1em;
+    }
+
+    /* Config dos inputs */
+    input {
+        width: 55vw;
+        height: 50px;
+    }
+
+    /* Configd da div save*/
+    div.save a {
+        right: 23%;
+    }
+
+    /* Config da div links */
+    div.links {
+        top: 8%; /*Para encaixar dentro do main*/
+        right: 4.5%;
+    }
+
+    /* Config do footer */
+    footer {
+        display: block;
+    }
+}
+
+/*-------------------------------------------------------------------------------------------------------------*/
+
+/* Botei isso aqui pra resolver um bug que tava dando nessa largura. É bom olhar melhor depois */
+@media screen and (min-width:887px) and (max-width:992px) {
+    div.links {
+        top: 18%
+    }
+}
+
+/*-------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (min-width:992px) {
+    body {
+        background: black url(../imagens/bckgrnd.jpg) fixed ;
+
+    }
+
+      /* div da imagem*/
+      div.imagem {
+        position: absolute;
+        left: 15%;
+        top: 40%;
+    }
+
+    /* Pra deixar o tamanho da main fixo*/
+    main {
+        left: 65%;
+
+        width: 640px;
+        height: 701px;
+    }
+   
+    /* Config da div header */
+    div#header {
+        font-size: 1.4em;
+        line-height: 3em; 
+    }
+
+    div#header > p {
+        font-size: 1.1em;
+    }
+
+    /* Config dos inputs */
+    input {
+        width: 545px;
+        height: 50px;
+    }
+
+    /* Config da checkbox (tava ficando desalinhada do resto dos inputs nessa largura) */
+    div.save #check {
+        margin-left: 20px;
+    }
+
+    /* Config da div save*/
+    div.save {
+        width: 689px;
+        height: 60px;
+        left: 4%;
+    }
+
+    div.save a {
+        right: 18%;
+    }
+
+    /* Config da div links */
+    div.links {
+        top: 18%; /* Para encaixar dentro do main */
+        right: 5%
+    }
+
+    /* Config do footer */ 
+    footer {
+        display: block;
+    }
+}

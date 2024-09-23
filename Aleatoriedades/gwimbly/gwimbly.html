@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        h1 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url("ex022/imagens/pattern001.png");
+            padding: 10px;
+            border-radius: 5px;
+            border: 4px groove red;
+            color: white;
+            text-shadow: 1px 1px 3px;
+        }
+        
+        #botao {
+            display: block;
+            margin: -10px auto;
+            background-color: red;
+            font-weight: bolder;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 5vw;
+        }
+
+        .board {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+
+        .board img {
+        width: 30vw;
+        height: 45.5vh;
+        border-radius: 3%;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOE CINCO REAIS AGORA E VEJA A ICÔNICA DANÇA DA VITÓRIA DO GWIMBLY!!!!!</h1>
+    <input type="button" value="DOAR!!!!!" id="botao" onclick="character();">
+
+    <div class="board">
+        <img src="" id="hiddenimageid" />
+    </div>
+    <script>
+        number = 0;
+var animations = ['https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczJ3NzA1eG5lOHNrZTluaTBiZG5laTF0b3V6bjRobWs4MmFtN21zYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Sz15awUvL9rId46MN9/giphy.webp',
+  'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczJ3NzA1eG5lOHNrZTluaTBiZG5laTF0b3V6bjRobWs4MmFtN21zYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Sz15awUvL9rId46MN9/giphy.webp',
+  'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczJ3NzA1eG5lOHNrZTluaTBiZG5laTF0b3V6bjRobWs4MmFtN21zYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Sz15awUvL9rId46MN9/giphy.webp'
+];
+
+
+ var refreshIntervalId = setInterval(function() {
+  image = document.getElementById('hiddenimageid');
+  image.src = animations[number];
+},1)
+
+const gifDuration = 1420;
+
+function character() {
+    clearInterval(refreshIntervalId);
+    image = document.getElementById('hiddenimageid');
+    image.src = animations[1];
+
+    console.log(number);
+    number++;
+
+    setTimeout(function() {
+        image = document.getElementById('hiddenimageid');
+        image.src = '1-giphy.jpg';
+    }, gifDuration);
+}
+    </script>
+</body>
+</html>
