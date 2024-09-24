@@ -11,7 +11,10 @@ int main () {
 
 	printf("\nQual seu nome completo? ");
 	//Pra ler a string completa, lendo os espaços
-	fgets(nomeTeste, sizeof nomeTeste,stdin);
+	
+	scanf("%[ -~]", nomeTeste);
+	
+	// OU fgets(nomeTeste, sizeof nomeTeste,stdin);
 	
 	printf("%s", nomeTeste);
 	

@@ -9,7 +9,7 @@ int main () {
 	char p1[256], p2[256];
 	
 	printf("Insira a primeira palavra: ");
-	scanf("%s", p1);
+	scanf("%[ -~]", p1);
 
 	printf("Insira a segunda palavra: ");
 	scanf("%s", p2);
