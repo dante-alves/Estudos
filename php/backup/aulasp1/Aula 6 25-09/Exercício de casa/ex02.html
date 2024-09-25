@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício para casa 2</title>
+    <style>
+        body {
+            text-align: center;
+            font-size: 2em;
+        }
+
+        input {
+            font-size: 1.2em;
+        }
+        
+        input[type=radio] {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Investimento</h1>
+    <form action="ex02.php" method="post">
+        <p>
+            <label for="tipo">Tipo de investimento:</label>
+            <input type="radio" name="tipo" id="tipo" value="1"> Poupança
+            <input type="radio" name="tipo" id="tipo" value="2"> Renda Fixa
+        </p>
+
+        <p>
+            <label for="valor">Valor a ser investido</label>
+            <input type="number" name="valor" id="valor" step="0.01" min="0">
+        </p>
+        <input type="submit" value="Verificar">
+    </form>
+</body>
+</html>
