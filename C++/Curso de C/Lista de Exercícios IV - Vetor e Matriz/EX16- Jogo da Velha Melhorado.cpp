@@ -5,6 +5,8 @@
 
 //EX16 - Jogo da Velha
 
+
+
 int main () {
 	setlocale(0, "Portuguese");
 	int tam = 3;
@@ -18,7 +20,7 @@ int main () {
 		}
 	}
 	while (1) {
-		//Definindo variáveis de vencedor (Essencial a partir da linha 104), velha (Essencial para definir se o jogo deu velha - linha 92 a 99) e cont (Só para mostrar as posições de cada quadrado)
+		//Inicializando variáveis de vencedor (Essencial a partir da linha 104), velha (Essencial para definir se o jogo deu velha - linha 92 a 99) e cont (Só para mostrar as posições de cada quadrado)
 		vencedor = ' ';
 		velha = 0;
 		cont = 0;
