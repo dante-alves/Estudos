@@ -44,13 +44,17 @@ int main(){
 	
 	t_Cadastro cadastro[3];
 	
-	char enderecoGeral[3][110] = {"Rua "};
+	char enderecoGeral[3][110];
 	
 	int i;
 	
-
+	for(i = 0; i < 3; i++){
+		strcpy(enderecoGeral[i], "Rua ");
+	}
 		
 	for(i = 0; i < 3; i++){
+		printf("\n%dº Cadastro\n", i + 1);
+		printf("-----------------------\n");
 		printf("Nome: ");
 		scanf("%50[^\n]", cadastro[i].nome);
 		scanf("%c");
@@ -96,10 +100,21 @@ int main(){
 		}
 	}
 	
+	system("cls");
+	
+	printf("DADOS CADASTRADOS");
+	printf("\n-----------------------");
 	for(i = 0; i < 3; i++){
-		printf("%dº Cadastro\n", i + 1);
+		printf("\n%dº Cadastro\n", i + 1);
 		printf("-----------------------\n");
-		printf("Nome: %s\nEndereço: %s\nCPF: %s\nIdade: %d\n", cadastro[i].nome, enderecoGeral[i], cadastro[i].doc.cpf, cadastro[i].idade);
+		printf("Nome: %s\nEndereço: %s\n", cadastro[i].nome, enderecoGeral[i]);
+		switch(cadastro[i].pessoaFJ){
+			case 0:
+				printf("CPF: %s\nIdade: %d\n", cadastro[i].doc.cpf, cadastro[i].idade);
+			break;
+			case 1:
+				printf("CNPJ: %s", cadastro[i].doc.cnpj);
+		}
 	}
 	return 0;
 }
