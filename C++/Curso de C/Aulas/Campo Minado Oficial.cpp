@@ -94,6 +94,7 @@ void contarMinas(){
 	}
 }
 
+// Procedimento para imprimir as linhas dependendendo do tamanho do tabuleiro do jogo
 void linha(){
 	if(tam == 10)
 		printf("\n\t\t    ----------------------------------------\n");
@@ -157,6 +158,7 @@ int ganhou(){
 	return qtd;
 }
 
+// Procedimento para calcular o tempo de jogo
 void tempoDeJogo(time_t end, time_t start){
 	double tempoTotal = difftime(end, start);
 	int minutos, segundos;
