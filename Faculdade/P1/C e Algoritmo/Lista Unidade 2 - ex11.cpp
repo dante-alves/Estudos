@@ -8,8 +8,12 @@
 			-> Escreva um programa em C, totalmente dinâmico, para realizar as
 			quatro operações (CRUD) de um cadastro de alunos: Create, Read,
 			Update e Delete. 
+			Create ----> FEITO
+			Read   ----> FEITO
+			Update ----> 
+			Delete ----> 
 			
-			-> Cada operação deverá estar em uma função. 
+			-> Cada operação deverá estar em uma função. ----> FEITO
 			
 			-> Deverá ter uma função para mostrar o cadastro inteiro. ----> FEITO
 			
@@ -57,7 +61,8 @@ int tamCadastro(); // função que retorna o tamanho do array de cadastros
 
 int create(t_Cadastro *cadastros, int qtd, int tam); // função para criar novo cadastro
 void read(t_Cadastro *cadastros, int qtd); // procedimento para mostrar os cadastros feitos
-	
+void update(t_Cadastro *cadastros, int qtd, int tam); // procedimento para atualizar um cadastro
+int deletar(t_Cadastro *cadastros, int qtd, int tam); // procedimento para deletar um cadastro
 
 // main
 int main(){
@@ -78,7 +83,7 @@ int main(){
 	do{
 		system("cls");
 		printf("\tCADASTRO DE ALUNOS\n\t--------------------\n");
-		printf("\tAlunos cadastrados: %d\n\t--------------------\n", qtd);
+		printf("\tAlunos cadastrados: %d de %d\n\t--------------------\n", qtd, tam);
 		printf("\tSelecione uma opção:\n\t[1]Cadastrar novo aluno\n\t[2]Ler cadastros\n\t[3]Atualizar cadastros\n\t[4]Deletar cadastro\n\t[5]Sair\n\n\tInforme: ");
 		scanf("%d", &opc);
 		fflush(stdin);
@@ -89,10 +94,14 @@ int main(){
 				break;
 			case 2:
 				read(cadastros, qtd);
+				printf("\n\tPressione ENTER para voltar ao menu...\n");
+    			while(getchar() != '\n');
 				break;
 			case 3:
+				update(cadastros, qtd, tam);
 				break;
 			case 4:
+				qtd = deletar(cadastros, qtd, tam);
 				break;
 			case 5:
 				printf("\n\n\tAdeus!\n");
@@ -111,10 +120,17 @@ int main(){
 
 // função que retorna o tamanho do array de cadastros
 int tamCadastro(){
-	int tam;
+	int tam, result;
 	printf("\tQuantos alunos tem na turma (máximo de cadastros que serão permitidos)? ");
-	scanf("%d", &tam);
+	result = scanf("%d", &tam);
 	fflush(stdin);
+	
+	
+	while(result != 1 || tam < 0 || tam > 60){
+		printf("\n\tValor Inválido. Insira um valor maior que 0 ou menor que 60.");
+		result = scanf("%d", &tam);
+		fflush(stdin);
+	}
 	
 	return tam;
 }
@@ -210,11 +226,134 @@ void read(t_Cadastro *cadastros, int qtd) {
 	                printf("Curso desconhecido");
 	                break;
 	        }
-	        printf("\n\n\t--------------");
+	        printf("\n\t--------------\n");
 	    }
 	}
-    
-    printf("\n\tPressione ENTER para voltar ao menu...\n");
-    while(getchar() != '\n');
+}
+
+// procedimento para atualizar os cadastros
+void update(t_Cadastro *cadastros, int qtd, int tam){
+	char novoNome[1024];
+	int i;
+	char opc;
+	
+	system("cls");
+	if (cadastros == NULL || qtd <= 0) 
+        printf("\n\tNenhum cadastro feito até o momento.\n\n");
+        
+    else{
+		do{
+			system("cls");
+			
+			read(cadastros, qtd); // chamar a leitura para mostrar os alunos já cadastrados
+			
+			// selecionar o aluno a ter os dados alterados
+			printf("\n\n\tSelecione o número do aluno o qual deseja atualizar o cadastro: ");
+			scanf("%d", &i);
+			fflush(stdin);
+			i--; // decrementa 1 do índice do aluno, para ficar de acordo com a posição real do array que começa em 0
+			
+			while(i >= qtd && i < 0){
+				printf("\n\tValor inválido!");
+				printf("\n\n\tSelecione um número válido do aluno o qual deseja atualizar o cadastro: ");
+				scanf("%d", &i);
+				fflush(stdin);
+				i--;
+			}
+			
+			printf("\n\tInsira o nome do aluno: ");
+			scanf("%1024[^\n]", novoNome);
+			fflush(stdin);
+			
+			printf("\n\tInsira o RGM: ");
+			scanf("%d", &cadastros[i].rgm);
+			fflush(stdin);
+			
+			printf("\n\tSelecione o curso:\n\n\t1 - Análise e Desenvolvimento de Sistemas\n\t2 - Ciência da Computação\n\t3 - Ciência de Dados\n");
+			printf("\t4 - Gestão da Tecnologia da Informação\n\t5 - Redes de Computadores\n\t6 - Sistemas Para Internet\n\n\tInforme: ");
+			scanf("%d", &cadastros[i].curso);
+			fflush(stdin);
+			
+			// alocando memória dinamicamente para o tamanho exato do nome
+			cadastros[i].nome = (char *)malloc(strlen(novoNome) + 1);
+			
+			strcpy(cadastros[i].nome, novoNome);
+		
+
+			printf("\n\tAtualizar outro cadastro[S/N]? ");
+			scanf(" %c", &opc);
+			fflush(stdin);
+			opc = toupper(opc);
+			
+			
+			if(opc != 'N' && opc != 'S')
+				printf("\tResposta inválida! Responda com S ou N.\n");
+		
+		}while(opc != 'N');
+	}
+		
+		printf("\tPressione ENTER para voltar ao menu...");
+		while(getchar() != '\n');
+}
+
+// função para deletar cadastros
+int deletar(t_Cadastro *cadastros, int qtd, int tam){
+	int i, j;
+	char opc;
+	char *auxChar;
+	t_Cadastro auxInt;
+	
+	system("cls");
+	if (cadastros == NULL || qtd <= 0) 
+        printf("\n\tNenhum cadastro feito até o momento.\n\n");
+        
+    else{
+		do{
+			system("cls");
+			
+			read(cadastros, qtd); // chamar a leitura para mostrar os alunos já cadastrados
+			
+			// selecionar o aluno a ter os dados alterados
+			printf("\n\n\tSelecione o número do aluno o qual deseja deletar: ");
+			scanf("%d", &i);
+			fflush(stdin);
+			i--; // decrementa 1 do índice do aluno, para ficar de acordo com a posição real do array que começa em 0
+			
+			while(i >= qtd || i < 0){
+				printf("\n\tValor inválido!");
+				printf("\n\n\tSelecione um número válido do aluno o qual deseja deletar o cadastro: ");
+				scanf("%d", &i);
+				fflush(stdin);
+				i--;
+			}
+			
+			for(j = i; j < qtd - 1; j++){
+				cadastros[j].nome = cadastros[j+1].nome;
+				cadastros[j].rgm = cadastros[j+1].rgm;
+				cadastros[j].curso = cadastros[j+1].curso;
+			}
+			
+			free(cadastros[i].nome);
+			
+			qtd--;
+			
+			read(cadastros, qtd);
+
+			printf("\n\tDeletar outro cadastro[S/N]? ");
+			scanf(" %c", &opc);
+			fflush(stdin);
+			opc = toupper(opc);
+			
+			
+			if(opc != 'N' && opc != 'S')
+				printf("\tResposta inválida! Responda com S ou N.\n");
+		
+		}while(opc != 'N');
+	}
+		
+		printf("\tPressione ENTER para voltar ao menu...");
+		while(getchar() != '\n');
+		
+		return qtd;
 }
 
