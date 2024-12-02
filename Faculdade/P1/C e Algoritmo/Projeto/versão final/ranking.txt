@@ -1,0 +1,12 @@
+bOLSONARO* 2 0 0 4
+Dante* 1 0 0 2
+Cassio* 1 0 0 2
+Bonoro* 1 0 0 2
+ble* 1 0 0 2
+Zucker Berg* 0 0 1 0
+Bozo* 0 0 1 0
+Luloro* 0 0 1 0
+blo* 0 0 1 0
+Lula* 0 0 2 0
+Bulhufas* 1 0 0 2
+Bob Esponja* 0 0 1 0

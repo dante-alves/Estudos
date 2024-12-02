@@ -1,0 +1,2 @@
+dante* 1 0 0 2
+goleiro cassio* 0 0 1 0

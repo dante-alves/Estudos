@@ -158,7 +158,11 @@ int ganhou(){
 	return qtd;
 }
 
+<<<<<<< Updated upstream
 // Procedimento para calcular o tempo de jogo
+=======
+// procedimento para calcular e mostrar o tempo de jogo
+>>>>>>> Stashed changes
 void tempoDeJogo(time_t end, time_t start){
 	double tempoTotal = difftime(end, start);
 	int minutos, segundos;

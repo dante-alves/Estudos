@@ -104,10 +104,11 @@ void lerCoordenadas(char X) {
 	setlocale(0, "Portuguese");
 	printf("\nDigite a posição que quer jogar: ");
 	scanf("%d", &pos);
-	
+	fflush(stdin);
 	while (posValida() != 1) {
 		printf("\nPosição inválida ou já preenchida. Escolha outra posição: ");
 		scanf("%d", &pos);
+		fflush(stdin);
 	}
 	jogo[(pos - 1)/3][(pos - 1) % 3] = X;
 }
