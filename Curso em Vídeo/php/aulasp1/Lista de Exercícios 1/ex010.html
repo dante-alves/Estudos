@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Email</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .msg {
+            display: block;
+            border: 1px solid black;
+            margin: 10px 0px;
+            padding: 5px 5px 100px 5px;
+            width: 700px;
+
+        }
+
+        textarea {
+            display: block;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enviar Email</h1>
+
+    <form action="ex010.php" method="post">
+        <p>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" required autocomplete="off">
+        </p>
+
+        <p>
+            <label for="email">Email destinatário</label>
+            <input type="email" name="email" required>
+        </p>
+        
+        <p>
+            <label for="assunto">Assunto</label>
+            <input type="text" name="assunto" required autocomplete="off">
+        </p>
+
+        <p>
+            <label for="mensagem">Mensagem</label>
+            <textarea name="mensagem" id="mensagem" rows="20" cols="80" required autocomplete="off"></textarea>
+        </p>
+
+        <a href="mailto:dantealves8@gmail.com?subject=Assunto&body=Texto"></a>
+        <input type="submit" value="Preencher">
+    </form>
+    
+</body>
+</html>

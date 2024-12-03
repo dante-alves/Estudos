@@ -1,0 +1,26 @@
+@charset "UTF-8";
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-image: linear-gradient(to left, #10454F, #506266)
+}
+main{ /*o main é o bloco principal da página */
+    background-color: white;
+    border-radius: 10px; /* Deixar as bordas arredondadas */
+    box-shadow: 5px 5px 15px #09292f; /* Coloca um sombreamento, sendo o primeiro valor pra definir a sombra do lado, o segundo valor a sombra de baixo, o terceiro o espalhamento da sombra, e por fim, a cor do bagui */
+    width: 1000px; /* Definir a largura do bloco */
+    padding: 10px; /* Delimitar uma distância do conteúdo da borda do bloco */
+    margin: auto; /* Deixa o bloco automaticamente centralizado na pág */
+}
+h1 {
+    color: #BDE038;
+    text-align: center;
+    text-shadow: 1px 1px 2px #7f9727b9;
+}
+h2 {
+    color: #A3AB78;
+}
+p{
+    text-align: justify;
+}

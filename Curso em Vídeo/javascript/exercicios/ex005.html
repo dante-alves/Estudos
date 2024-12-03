@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        body {
+            background-color: rgba(0, 0, 0, 0.752);
+            color: white;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        }
+        main {
+            margin: auto;
+            width: 600px;
+            background-color: rgba(0, 0, 0, 0.397);
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid ;
+            box-shadow: 1px 1px 3px black;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Olá mundo!</h1>
+        <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+        <p>Vamos testar!</p>
+        <div id="msg">Clique em mim</div>
+        <script>
+            var p1 = document.getElementsByTagName('p')[0]
+            p1.style.color = ('darkred')
+            document.write(p1.innerHTML)
+            
+            var d = window.document.getElementById('msg')
+            d.style.backgroundColor = ('darkred')
+            d.innerText = ('Eita tranqueeeira')
+
+            document.querySelector('div#msg').innerText = 'Daleee'
+        </script>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+    <h1>Exemplos de formulários</h1>
+    
+    <form action="cadrastro.php" method="get">
+        <fieldset>
+            <legend>Sexo</legend>
+            <input type="radio" name="sex" id="isexm" checked value="M"> <label for="isexm">Masculino</label> <!--Para não ser possível marcar ambos, é só colocar o mesmo "name" em todos os radios-->
+            <input type="radio" name="sex" id="isexf" value="F"> <label for="isexf">Feminino</label>
+        </fieldset>
+        <fieldset>
+            <legend>Esportes Favoritos</legend>
+
+            <input type="checkbox" name="fut" id="ifut"> <label for="ifut">Futebol</label>
+            <input type="checkbox" name="bask" id="ibask"> <label for="ibask">Basquete</label>
+            <input type="checkbox" name="tenis" id="itenis"> <label for="tenis">Tênis</label>
+            <input type="checkbox" name="volei" id="ivolei"> <label for="volei">Vôlei</label>
+            <input type="checkbox" name="UFC" id="iUFC"> <label for="UFC">UFC</label>
+        </fieldset>
+        <br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
+    </form>
+</body>
+</html>

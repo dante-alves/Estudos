@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <title>Fontes em CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            /* Medidas Absolutas -> cm, mm, in, px, pt (é a medida comum para o word, por exemplo, mas não recomenda-se usar essa para criar sites), pc ------------ A mais usada será o px */
+
+            /* Medidas Relativas -> %, em (relativo ao tamanho atual da fonte, do M maiúsculo), ex (relativo ao tamanho do x, Altura-X), rem (tamanho atual da fonte relativo ao body), vw (porcentagem da largura da viewport - tamanho da tela), vh (porcentagem da altura da viewport) --------------- A mais usada será o em */
+            font-size: 1em; /* Geralmente 16px = 1em ------- USA SEMPRE O em PORQUE TRABALHA COM A PORCENTAGEM DO TAMANHO DA FONTE */ 
+            font-weight: normal; /* lighter, normal, bold, bolder  ----- Pode usar valores também de 100 a 900 ---- nem toda fonte tem essas variações, uma que tem é Work Sans */       
+            font-style: italic; /* italic ou normal */
+            text-decoration: underline;
+        }
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 3em;
+            font-weight: bolder;
+            font-style: italic;
+            /* Podemos resumir todas essas configurações em uma -> shorthand font
+            ordem -> font-style -> font-weight -> font-size -> font family */
+            font: italic bolder 3em Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trabalhando com Fontes</h1>    
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus corrupti ipsa soluta hic voluptatibus eligendi officiis quisquam tempore sint? Reprehenderit quas enim, molestiae consequatur magni a culpa non architecto voluptate.</p>
+
+    <h2>Subtítulo do Exercício</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati dicta amet expedita sint distinctio consequatur aspernatur, eius laboriosam reiciendis earum illum esse accusantium voluptatibus quasi iste alias molestiae quidem voluptates!</p>
+</body>
+</html>

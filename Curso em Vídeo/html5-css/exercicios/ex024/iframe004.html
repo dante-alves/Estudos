@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aumentando a segurança dos iframes</title>
+</head>
+<body>
+    <h1>Aumentando a segurança dos iframes</h1>
+    <p>Um site que não é seguro mas que está sendo transmitido para o seu site por meio de um iframe pode acarretar riscos para os usuários. É para isso que existem alguns parâmetros no iframe:</p>
+    <iframe src="formulario.html" referrerpolicy="no-referrer" sandbox="allow-forms"></iframe>
+
+    <p>Assim como pode ser feito com formulários, também pode ser feito com javascript. Exemplo</p>
+
+    <iframe src="javascript.html" referrerpolicy="no-referrer" sandbox="allow-scripts"></iframe>
+</body>
+</html>

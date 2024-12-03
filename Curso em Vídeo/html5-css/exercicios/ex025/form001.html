@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários 1</title>
+    <style>
+     
+        input {
+            width: 200px;
+            margin: 10px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Meu primeiro formulário</h1>
+    <form action="cadastro.php" method="get">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nomeid"> <br>
+        <label for="sobrenome">Sobrenome</label>
+        <input type="text" name="sobrenome" id="sobrenomeid">
+        <input type="submit" value="Enviar">
+    </form>
+
+    <h1>Usuário e Senha</h1>
+    <form action="cadastro.php" method="post" autocomplete="on">
+        <fieldset>
+            <legend>Login</legend>
+            
+            <label for="iusu">Usuário</label>
+            <input type="text" name="usu" id="iusu" required minlength="5" maxlength="15" placeholder="Ex: João da Silva" autocomplete="username">
+            
+            <label for="ipassword">Senha</label>
+            <input type="password" name="password" id="ipassword" required minlength="8" maxlength="15" autocomplete="current-password" placeholder="Mínimo de 5 caracteres">
+            
+            <label for="imedia">Média</label>
+            <input type="number" name="media" id="imedia" min="0" max="10" step="0.1" placeholder="De 0 a 10" required>
+
+            <label for="iletivo">Período Letivo</label>
+            <input type="month" name="letivo" id="iletivo" value="2024-08">
+
+            <label for="idia">Dia da Prova</label>
+            <input type="date" name="dia" id="idia" value="2024-09-21">
+
+            <label for="ihora">Horário da Prova</label>
+            <input type="time" name="hora" id="ihora" >
+
+            <label for="iemail">Email</label>
+            <input type="email" name="email" id="iemail" placeholder="Ex: joaosilva@gmail.com" required autocomplete="email">
+
+            <label for="itel">Telefone</label>
+            <input type="tel" name="tel" id="tel" required autocomplete="tel" pattern="^\(\d{2}\)\d{4,5}-\d{4}$" placeholder="(xx)xxxxx-xxxx"> <!-- O pattern serve para definir o padrão de como o número deve ser colocado-->
+
+            <!--Estudar mais sobre RegEx-->
+            <input type="submit" value="Enviar">
+        </fieldset>
+    </form>
+    
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <title>Grouping Tags</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: aquamarine;
+        }
+        header {
+            background-color: antiquewhite;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgb(42, 176, 131);
+        }
+        header > h1 {
+            text-align: center;
+        }
+        nav {
+            background-color: rgba(0, 210, 221, 0.622);
+            width: 250px;
+            text-align: center;
+            margin: auto;
+            box-shadow: 1px 1px 5px 1px #afa597;
+        }
+        nav > a {
+            text-decoration: none;
+            color: white;
+        }
+        nav > a:visited {
+            color: rgb(145, 145, 145);
+        }
+        nav > a:hover {
+            color: rgb(129, 129, 129);
+            text-decoration: underline;
+        }
+        main {
+            background-color: white;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgb(42, 176, 131);
+        }
+        article {
+            background-color: antiquewhite;
+            padding: 5px;
+        }
+        article > aside {
+            background-color: rgb(199, 183, 163);
+            width: 250px;
+        }
+        footer {
+            width: 280px;
+            color: white;
+            font-weight: bold;
+            background-color: rgb(0, 91, 61);
+            padding: 10px;
+            margin: auto;
+            border: 3px groove rgb(0, 60, 40);
+            border-radius: 10px;
+        }
+        footer > p {
+            margin: auto;
+            width: 263px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu site</h1>
+        <nav>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+        </nav>
+    </header>
+    <main>
+        <section id="assuntos">
+
+        </section>
+        <section id="noticias">
+            <article>
+                <h2>Notícias sobre o Brasil</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga temporibus dicta facere dolores quaerat facilis hic quas distinctio provident! Dolore obcaecati, officia doloremque ut a assumenda quas eaque quae consequatur.</p>
+                <aside>Artigo escrito por José da Silva.</aside>
+            </article>
+            <article>
+                <h2>Notícias ao redor do mundo</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti eum dignissimos dicta consectetur! Perferendis, rerum, rem hic repellendus quis pariatur ipsam nam laudantium vitae quas voluptate eius natus, tempora maxime?</p>
+                <aside>Artigo escrito por Jackson</aside>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Desenvolvido pelo CursoemVideo</p>
+    </footer>
+</body>
+</html>

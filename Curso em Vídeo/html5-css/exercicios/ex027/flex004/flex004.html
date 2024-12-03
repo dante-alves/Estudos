@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox 4</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: lightsalmon;
+        }
+
+        main {
+            background-color: lightgreen;
+
+            height: 100vh;
+            width: 100vw;
+
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-between; /* Eixo principal (main-axis) centralizado*/
+            align-items: center; /* Eixo transversal(cross-axis) centralizado*/
+        }
+
+        h1 {
+            font-size: 3.8vw;
+            padding: 10px;
+            margin: 10px;
+            
+            display: block;
+            border: 1px solid white;
+
+
+        }
+
+        section {
+            background-color: lightskyblue;
+
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Centralização</h1>
+        <section>
+            <h2>Tela de Login</h2>
+        </section>
+        <footer>
+            <h1>Criado por Dante</h1>
+        </footer>
+    </main>
+</body>
+</html>

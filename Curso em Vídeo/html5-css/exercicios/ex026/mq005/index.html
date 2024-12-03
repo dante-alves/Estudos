@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-projeto com Media Query</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="estilos/style.css" media="all">
+    <link rel="stylesheet" href="estilos/media-query.css">
+</head>
+<body onload="aparecer ()" onresize="redimensionar ()">
+    <header>
+        <h1>Meu site</h1>
+        <span id="hamburguer" class="material-symbols-outlined" onclick="clickMenu()" onmouseenter="entrar()" onmouseleave="sair()">menu</span>
+        <menu id="menuu">
+            <ul>
+                <li><a href="#">Opção 1</a></li>
+                <li><a href="#">Opção 2</a></li>
+                <li><a href="#">Opção 3</a></li>
+                <li><a href="#">Opção 4</a></li>
+                <li><a href="#">Opção 5</a></li>
+            </ul>
+        </menu>
+    </header>
+    <main>
+        <article>
+            <h2>Testando Media Queries</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores itaque incidunt libero possimus voluptas quas explicabo neque assumenda aliquid suscipit earum omnis nesciunt ad, repellendus quod totam fuga. Facilis, illum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi placeat, ipsum blanditiis dolor cum distinctio reprehenderit natus consectetur rem, quidem rerum quo saepe ex omnis, at quas temporibus repudiandae doloribus!</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam obcaecati neque placeat asperiores quos, distinctio blanditiis ullam! Dolores, omnis dolorum, assumenda, molestias veritatis in rerum tempora fugiat iusto totam beatae? Lorem ipsum dolor, sit amet consectetur adipisicing elit. At autem, culpa sed tempora obcaecati officiis nihil consectetur fuga cupiditate distinctio veritatis optio quae doloremque aliquam, molestias aspernatur. Praesentium, architecto nobis.</p>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, laborum! Tenetur cupiditate est labore debitis ab, mollitia repudiandae aliquid unde reprehenderit incidunt odit, architecto, rem delectus quia quas a dolores. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam vel porro facere tempora, corporis atque tenetur minima! Temporibus nostrum aut, dolorem magni eligendi, corporis beatae eaque quidem cupiditate quasi aliquam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt autem nam itaque quidem illum nesciunt doloremque sed iusto perferendis! Quis sunt facere nesciunt cumque sapiente quod molestias vero maxime autem.</p>
+        </article>
+    </main>
+    <script>
+        var menu = document.querySelector('#menuu');
+
+        //Abrir ou fechar o menu hamburguer
+        function clickMenu() {
+           if (menu.style.display === 'none' || menu.style.display === '') {
+            menu.style.display = 'block';
+           } else {
+            menu.style.display = 'none'
+           }
+        }
+
+        //Para resolver o bug de quando fecha o menu hamburguer e aumenta a tela (Solução que eu usei)
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) {
+                menu.style.display = 'block'
+            } else if (menu.style.display !== 'none') {
+                menu.style.display = 'none'
+            }
+        });
+            /*Solução que Guanabara usou
+                function redimensionar () {
+                    if (window.innerWidth >= 768) {
+                        menu.style.display = 'block'
+                    } else {
+                        menu.style.display = 'none' 
+                    }
+                }
+            */
+
+        //Para fazer as opções do menu aparecerem se a tela for maior que 768px, e sumir se for menor, para só ter o menuzinho na tela quando iniciar a página
+        function aparecer() {
+            if (window.innerWidth >= 768) {
+                menu.style.display = 'block'
+            } else if (menu.style.display !== 'none') {
+                menu.style.display = 'none'
+            }
+        }
+      //Para mudar a cor do menu quando passar o mouse em cima e não bugar em um celular 
+        function entrar () {
+            hamburguer.style.background = 'white';
+            hamburguer.style.color = 'black';
+        }
+     //Para voltar à cor normal 
+        function sair () {
+            hamburguer.style.background = 'rgb(53, 53, 53)';
+            hamburguer.style.color = 'white'
+        }
+    </script>
+</body>
+</html>

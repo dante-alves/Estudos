@@ -1,0 +1,97 @@
+@charset "UTF-8";
+/* Configuração Mobile First */
+
+/*Configurações gerais*/
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    box-sizing: border-box;
+}
+
+html {
+    width: 100vw;
+}
+
+body {
+    background-color: lightgray;
+}
+
+/* Configurações do header */
+
+header {
+    background-color: gray;
+}
+
+header > h1 {
+    text-align: center;
+    color: white;
+    padding: 15px;
+}
+/* Menu hamburguer */
+
+
+#hamburguer {
+    background-color: rgb(53, 53, 53);
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+#hamburguer:hover {
+    cursor: pointer;
+}
+
+#hamburguer:active {
+    background-color: white;
+    color: black;
+}
+
+header > ul {
+    list-style-type: none;
+}
+
+menu {
+    display: none;
+}
+
+menu a {
+    text-align: center; 
+    padding: 10px;
+    display: block; 
+    color: white;   
+    text-decoration: none;
+    font-weight: bolder;
+    background-color: rgb(80, 80, 80);
+    border: 2px solid gray;
+}
+
+menu a:hover {
+    background-color: rgb(166, 166, 166);
+}
+
+/* Configuração do main */
+
+main {
+    width: 90vw;
+    margin: auto;
+    margin-top: 10px;
+
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+
+}
+
+article > h2 {
+    margin-bottom: 25px;
+}
+
+article > p {
+    text-indent: 20px;
+    line-height: 1.2em;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+@media screen and (min-width:600px){
+    body {
+        display: initial;
+    }
+    header {
+        flex-flow: column wrap;
+        align-items: flex-start;
+
+        height: 140px;
+        padding-top: 20px;
+    }
+
+    menu > ul {
+        flex-flow: row nowrap;
+        height: auto;
+        width: 620px;
+    }
+
+    menu a {
+        width: 90px;
+    }
+
+    main {
+        width: 80vw;
+        margin: 10px auto;
+        border-radius: 10px;
+        box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.288);
+    }
+}
+
+@media screen and (min-width:992px) {
+    header {
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+        height: 110px;
+    }
+
+    menu > ul {
+        align-items: center;
+
+        height: 60px;
+    }
+}

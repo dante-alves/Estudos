@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(241, 208, 241);
+        }
+        main {
+            background-color: white;
+            margin: auto;
+            width: 600px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.241);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var nome = window.prompt ('Qual é seu nome?')
+        document.write (`<main> Olá, ${nome}! Seu nome tem ${nome.length} letras! <br> Seu nome em maiúsculas fica ${nome.toUpperCase()}! <br> Seu nome em minúsculas fica ${nome.toLowerCase()}! <br> </main>`)
+        var n1 = Number.parseFloat(window.prompt ('Quantos reais você tem em espécie?'));
+        var n2 = Number.parseFloat(window.prompt ('Quantos reais você tem no banco?'));
+        var s = n1 + n2
+        document.write(`<main><strong>${nome}</strong>, Você tem ${n1.toLocaleString('pt-BR', {style:'currency', currency: 'BRL'})} de dinheiro em espécie, e ${n2.toLocaleString('pt-BR', {style:'currency', currency: 'BRL'})} no banco. <br> Seu saldo total é de ${s.toLocaleString('pt-BR', {style:'currency', currency: 'BRL'})}.</main>`);
+    </script>
+</body>
+</html>

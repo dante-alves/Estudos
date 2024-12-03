@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+/* Variáveis */
+:root {
+    --cor0: white;
+    --cor1: rgb(134, 134, 134);
+    --cor2: rgb(224, 224, 224);
+    --cor3: black;
+}
+
+/* Configurações Gerais */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--cor2);
+    
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+header.items {
+    flex: 1 1 150px;
+}
+.items {
+    flex: auto;
+}
+
+/* Configurações do link*/
+a:hover {
+    background-color: var(--cor0);
+    color: var(--cor3);
+    transition: all .5s;
+}
+
+/* Configurações do header */
+header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items:center;
+   
+    padding: 10px;
+    height: 400px;
+    background-color: var(--cor1);
+}
+
+header > h1 {
+    width: 200px;
+    text-align: center;
+
+    font-size: 3em;
+    text-shadow: 1px 1px 2px black;
+    color: var(--cor0);
+} 
+
+/* Configurações do menu de opções */
+
+
+menu > ul {
+  
+    height: 300px;
+
+    list-style-type: none;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+menu a {
+    background-color: var(--cor3);
+    border-radius: 8px;
+    color: var(--cor0);
+   
+    text-decoration: none;
+    text-align: center;
+    
+    display: block;
+    width: 90vw;
+    padding: 10px;
+}
+
+/* Configurações do main */
+main {
+    background-color: white;
+    
+    width: 100vw;
+    padding: 20px;
+}

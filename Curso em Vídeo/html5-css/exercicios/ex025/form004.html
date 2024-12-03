@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários sem input</title>
+</head>
+<body>
+    <form action="cadastro.php" method="post">
+        <p>
+            <label for="icor">Cor preferida</label>
+            <select name="cor" id="icor">
+                <optgroup label="Cores Primárias">
+                    <option value="Vermelho">Vermelho</option>
+                    <option value="Azul" selected>Azul</option>
+                    <option value="Amarelo">Amarelo</option>
+                </oppgroup>
+            
+                <optgroup label="Cores Secundárias">
+                    <option value="Verde">Verde</option>
+                    <option value="Violeta">Violeta</option>
+                    <option value="Laranja">Laranja</option>
+                </optgroup>
+            
+            </select>
+        </p>
+        <p>
+            <label for="iprof">Profissão</label>
+            <input type="text" name="prof" id="iprof" list="opcoesprof">
+            <datalist id="opcoesprof">
+                <option>Desenvolvedor</option>
+                <option>Professor</option>
+                <option>Bandas e Fanfarras</option>
+            </datalist>
+        </p>
+        <p>
+            <label for="imsg">Mensagem</label>
+            <textarea name="msg" id="imsg" cols="30" rows="3" placeholder="Sua mensagem..."></textarea>
+        </p>
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+</body>
+</html>

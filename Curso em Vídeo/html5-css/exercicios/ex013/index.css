@@ -1,0 +1,17 @@
+p2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+
+}
+
+a {
+    color: red;
+    outline: none;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(149, 0, 0);
+    outline: none;
+    text-decoration: underline;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <title>Tags HTML</title>
+    <!-- Um exemplo de código para CSS para o futuro -->    
+    <style> 
+              abbr[title] {
+            position: relative;
+            cursor: pointer;
+        }
+
+        abbr[title]::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%; /* Ajusta a posição do tooltip */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000; /* Cor de fundo do tooltip */
+            color: #fff; /* Cor do texto do tooltip */
+            padding: 5px;
+            border-radius: 3px;
+            white-space: nowrap;
+            font-size: 14px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s;
+            pointer-events: none;
+        }
+        /* Essa parte aqui torna o tooltip visível quando coloca o cursor em cima. */
+        abbr[title]:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tags em HTML</h1>
+    <p>Em HTML, eu posso inserir diferentes tags para utilizar as mais diferentes funções. Algumas dessas tags serão apresentadas a seguir:
+        <ul>
+            <li><abbr title="Use a tag &lt;p&gt;">Parágrafo</abbr></li>
+            <li><abbr title="Use a tag &lt;h&gt;">Títulos</abbr></li>
+            <li><abbr title="Use a tag &lt;img&gt;">Imagens</abbr></li>
+            <li><abbr title="Use a tag &lt;abbr&gt;">Abreviações</abbr></li>
+            <li><abbr title="Use a tag &lt;code&gt;">Códigos-fonte</abbr></li>
+            <li><abbr title="Use a tag &lt;ol&gt;">Listas numeradas</abbr></li>
+            <li><abbr title="Use a tag &lt;ul&gt;">Listas com demarcadores</abbr></li>
+        </ul>
+    </p>
+</body>
+</html>

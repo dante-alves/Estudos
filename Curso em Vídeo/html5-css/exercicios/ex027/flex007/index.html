@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox 3</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: blue;
+
+            height: 98vh;
+        }
+        div.conteiner {
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+
+            width: 800px;
+            padding: 10px;
+            border-radius: 5px;
+           
+        }
+
+        div.item {
+            background-color: rgb(251, 255, 0);
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            margin-right: 5px;
+        }
+
+            /*Pode aumentar?
+            flex-grow: 1;
+            
+            Não pode aumentar?
+            flex-grow: 0;
+
+            Pode encolher?
+            flex-shrink: 1;
+            
+            Não pode encolher? 
+            flex-shrink: 0; */
+
+        div#A {
+            flex: 1 1 150px;
+        }
+
+        div#B {
+            flex: 2 0 150px;
+        }
+
+        div#C {
+            flex: 1 2 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="conteiner">
+        <div class="item" id="A">A</div>
+        <div class="item" id="B">B</div>
+        <div class="item" id="C">C</div>
+
+    </div>
+</body>
+</html>

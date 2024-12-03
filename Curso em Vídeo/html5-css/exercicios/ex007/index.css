@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(241, 229, 194);
+}
+
+mark{
+    background-color: red; color: white;
+}
+
+p{
+    color: blueviolet;
+}
+#p1{
+    color:brown;
+}
+#h1{
+    background-color: yellowgreen;
+}
+.pGeral{
+    color: rgb(0, 138, 169);
+}
+#mark1{
+    background-color: aqua;
+}
+#pipi{
+    width: 80px;
+    height: 80px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    background-color: #edf3ee;
+    color: rgb(0, 0, 0);
+    }
+#pipi:hover {
+    background-color: #adadb1;
+    color: rgb(255, 255, 255);
+    }

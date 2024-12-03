@@ -1,0 +1,67 @@
+@charset "UTF-8";
+/* Typical Device Breakpoins */
+
+    /* Extra small devices (phones, 600px and down) 
+    @media only screen and (max-width: 600px) {...}
+
+    /* Small devices (portrait tablets and large phones, 600px and up) 
+    @media only screen and (min-width: 600px) {...}
+
+    /* Medium devices (landscape tablets, 768px and up) 
+    @media only screen and (min-width: 768px) {...}
+
+    /* Large devices (laptops/desktops, 992px and up) 
+    @media only screen and (min-width: 992px) {...}
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) 
+    @media only screen and (min-width: 1200px) {...}
+*/
+/*Demais Mídias*/
+
+@media print {
+    * {
+     font-family: 'Courier New', Courier, monospace;
+    }
+
+    header > h1 {
+        color: black;
+    }
+
+    menu {
+        display: none;
+    }
+
+    menu > ul > li {
+        display: none;
+    }
+
+    #hamburguer {
+        display: none;
+    }
+
+    main {
+        border: 1px solid black;
+    }
+}
+
+
+@media screen and (min-width:768px) {
+    
+    #hamburguer {
+        display: none;
+    }
+
+    menu > ul > li {
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width:992px) {
+    main {
+        width:768px;
+        transition: width 0.5s;
+    }
+    menu > ul > li {
+        display: inline-block;
+    }
+}

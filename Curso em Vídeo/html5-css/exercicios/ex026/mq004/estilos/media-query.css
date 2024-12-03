@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+/* Typical Device Breakpoins */
+
+    /* Extra small devices (phones, 600px and down) 
+    @media only screen and (max-width: 600px) {...}
+
+    /* Small devices (portrait tablets and large phones, 600px and up) 
+    @media only screen and (min-width: 600px) {...}
+
+    /* Medium devices (landscape tablets, 768px and up) 
+    @media only screen and (min-width: 768px) {...}
+
+    /* Large devices (laptops/desktops, 992px and up) 
+    @media only screen and (min-width: 992px) {...}
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) 
+    @media only screen and (min-width: 1200px) {...}
+*/
+
+/*Todas as demais mídias*/
+
+/*Impressora*/
+@media print {
+    body {
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    main {
+        border: 1px solid black;
+    }
+    
+    main > h1 {
+        text-shadow: none;
+        color: black;
+    }
+
+    footer::after {
+        display: block;
+        margin: auto;
+        border: 1px solid black;
+        margin-top: 20px;
+        width: 90vw;
+        border-radius: 10px;
+        text-align: center;
+        content: "Essa impressão foi realizada por meio do repositório de Dante Alves";
+        font-family: 'Courier New', Courier, monospace;
+    }
+    
+    #phone {display: none;}
+    #tablet {display: none;}
+    #print {display: block;}
+    #pc {display: none;}
+    #tv {display: none;}
+}
+
+/*Tela de tablet em paisagem*/
+@media screen and (min-width:768px) and (max-width:992px) {
+    body {
+        background-image: url(../imagens/back-tablet.jpg);
+    }
+    #phone {display: none;}
+    #tablet {display: block;}
+    #print {display: none;}
+    #pc {display: none;}
+    #tv {display: none;}
+}
+
+/*Tela de laptos e dekstops*/
+@media screen and (min-width:992px) and (max-width:1200px) {
+    body {
+        background-image: url(../imagens/back-pc.jpg);
+    }
+    #phone {display: none;}
+    #tablet {display: none;}
+    #print {display: none;}
+    #pc {display: block;}
+    #tv {display: none;}
+}
+/*Tela de laptos e desktops large*/
+@media screen and (min-width:1200px) {
+    body {
+        background-image: url(../imagens/back-tv.jpg);
+    }
+    #phone {display: none;}
+    #tablet {display: none;}
+    #print {display: none;}
+    #pc {display: none;}
+    #tv {display: block;}
+}
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <title>Desafio 7 - Imagem flexível</title>
+    <style>
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Imagem Flexível</h1>
+    <picture>
+        <source media="(max-width: 350px)" srcset="imagens/cidade-pequenininha.jpg" type="image/jpeg">
+        <source media="(max-width: 700px)" srcset="imagens/cidade-pequena.jpg" type="image/jpeg">
+        <img src="imagens/cidade-media.jpg" alt="cidade">
+    </picture>
+<br>
+
+<img src="imagens/cidade-pequenininha.jpg" alt="nininha">
+</body>
+</html>
