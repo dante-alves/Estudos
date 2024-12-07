@@ -2,13 +2,7 @@
 #include <stdlib.h>
 #include <locale.h>
 
-/* Aula 223, 224, 225, 226 - Pilhas
-
-223 -> Explicação de pilhas
-224 -> Empilhar elemento com push();
-225 -> Desempilhar elemento com pop();
-226 -> Imprimir pilha
-
+/* Aula 227 - Pilhas segunda versão
 
 	Pilhas - Inserir ou remover elementos
 		- toda operação realizada na pilha é feita no topo da pilha.
@@ -57,21 +51,32 @@ typedef struct no{
 	struct no *proximo;	
 }No;
 
+typedef struct{
+	No *topo;
+	int tam;
+}Pilha;
+
 //Protótipos de função
 Pessoa ler_pessoa();
 void imprimir_pessoa(Pessoa p);
 
 void readln(char s[], int maxlen); // procedimento para ler strings
 
-No* push(No *topo); // função para adicionar elemento à pilha
-No* pop (No **topo); // função para remover elemento da pilha ----> utiliza ponteiro de ponteiro para alterar diretamente o valor de *topo na main
-void imprimir_pilha(No *topo); // procedimento para imprimir a pilha
+void push(Pilha *p); // função para adicionar elemento à pilha
+No* pop(Pilha *p); // função para remover elemento da pilha ----> utiliza ponteiro de ponteiro para alterar diretamente o valor de *topo na main
+void imprimir_pilha(Pilha *p); // procedimento para imprimir a pilha
 //No* popTeste(No **topo, No *alterar);
+
+// segunda versão
+void criar_pilha(Pilha *p);
 
 int main(){
 	setlocale(0, "Portuguese");
-	No *topo = NULL, *remover;
+	Pilha p;
+	No *remover;
 	int opcao;
+	
+	criar_pilha(&p);
 	
 	do{
 		printf("\n1 - Empilhar\n2 - Desempilhar\n3 - Imprimir\n0 - Sair\n\nEscolha uma opção: ");
@@ -80,17 +85,19 @@ int main(){
 		
 		switch(opcao){
 			case 1:
-				topo = push(topo);
+				push(&p);
 				break;
 			case 2:
-				remover = pop(&topo);
+				remover = pop(&p);
 				if(remover){
 					printf("\nPessoa removida: ");
 					imprimir_pessoa(remover->p);
+					
+					free(remover);
 				}
 				break;
 			case 3:
-				imprimir_pilha(topo);
+				imprimir_pilha(&p);
 				break;
 			case 0:
 				printf("\nFinalizando o programa. Até a próxima!\n");
@@ -140,24 +147,25 @@ void readln(char s[], int maxlen){
 }
 
 // função para adicionar elemento à pilha
-No* push(No *topo){
+void push(Pilha *p){
 	No *novo = (No *)malloc(sizeof(No));
 	
 	if(novo){
 		novo->p = ler_pessoa();
-		novo->proximo = topo; // o ponteiro de novo passa a apontar para o que anteriormente estava no topo
-		return novo;
+		novo->proximo = p->topo; // o ponteiro de novo passa a apontar para o que anteriormente estava no topo
+		p->topo = novo;
+		p->tam++;
 	}
 	else{
 		printf("\nErro ao empilhar elemento.\n");
-		return NULL;
 	}
 }
 // função para remover elemento da pilha ----> utiliza ponteiro de ponteiro para alterar diretamente o valor de *topo na main
-No* pop(No **topo){
-	if(*topo != NULL){
-		No *remover = *topo;
-		*topo = remover->proximo; // passar o ponteiro do dado diretamente abaixo ao que foi removido ----> poderia ser também o dado de *topo->proximo
+No* pop(Pilha *p){
+	if(p->topo){
+		No *remover = p->topo;
+		p->topo = remover->proximo; // passar o ponteiro do dado diretamente abaixo ao que foi removido ----> poderia ser também o dado de *topo->proximo
+		p->tam--;
 		return remover;
 	}
 	else
@@ -168,15 +176,16 @@ No* pop(No **topo){
 }
 
 // procedimento para imprimir a pilha
-void imprimir_pilha(No *topo){
+void imprimir_pilha(Pilha *p){
 	int i = 1;
 	
-	if(topo != NULL){
-		printf("\n------------------- P I L H A -------------------");
-		while(topo != NULL){ // enquanto o ponteiro não for nulo (indicando o início da pilha), continua imprimindo
+	if(p->topo){
+		No *aux = p->topo;
+		printf("\n------------------- P I L H A  tam: %d -------------------", p->tam);
+		while(aux){ // enquanto o ponteiro não for nulo (indicando o início da pilha), continua imprimindo
 			printf("\n%dª Pessoa da Pilha\n", i++);
-			imprimir_pessoa(topo->p);
-			topo = topo->proximo; //topo recebe o ponteiro do próximo da pilha
+			imprimir_pessoa(aux->p);
+			aux = aux->proximo; //topo recebe o ponteiro do próximo da pilha
 		}
 		printf("\n------------------- F I M  D A  P I L H A -------------------\n");
 	}
@@ -222,3 +231,8 @@ No* popTeste(No **topo, No *alterar) {
 
     return NULL;  // Retorna NULL se não conseguir remover o nó
 }*/
+
+void criar_pilha(Pilha *p){
+	p->topo = NULL;
+	p->tam = 0;
+}
