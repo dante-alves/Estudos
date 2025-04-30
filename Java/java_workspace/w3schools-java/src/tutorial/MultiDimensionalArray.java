@@ -8,11 +8,11 @@ public class MultiDimensionalArray {
 		System.out.println(matriz[0][1]);
 		
 		// como inicializar a matriz
-		int[][] matriz2 = new int[3][];
+		int[][] matriz2 = new int[3][]; // poderia colocar new int[3][2]
 		
-		matriz2[0] = new int[4];
-		matriz2[1] = new int[2];
-		matriz2[2] = new int[3];
+//		matriz2[0] = new int[4];
+//		matriz2[1] = new int[2];
+//		matriz2[2] = new int[3];
 		// o mesmo que -> matriz2 = {{0, 0, 0, 0}, {0, 0}, {0, 0, 0}};
 		
 		System.out.println("\nPrintando usando um for:");
