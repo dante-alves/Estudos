@@ -9,7 +9,6 @@ public class Estoque {
 
 	public static void main(String[] args) {
 		
-		Product a = new Product();
 		
 		Locale.setDefault(Locale.US);
 		Scanner scan = new Scanner(System.in);
@@ -17,14 +16,15 @@ public class Estoque {
 		
 		System.out.println("Enter product data:");
 		System.out.print("Name: ");
-		a.name = scan.nextLine();
+		String name = scan.nextLine();
 		
 		System.out.print("Price: ");
-		a.price = scan.nextDouble();
+		double price = scan.nextDouble();
 		
 		System.out.print("Quantity in stock: ");
-		a.quantity = scan.nextInt();
+		int quantity = scan.nextInt();
 		
+		Product a = new Product(name, price, quantity);
 		
 		System.out.println("Product data: " + a); // aqui utiliza o método toString()
 		
