@@ -1,3 +1,4 @@
+package teste;
 import java.util.Scanner;
 
 
@@ -6,21 +7,68 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		int tam;
+		int tam, totalLinhas, indiceValoresAleatorios;
 		
 		System.out.print("Digite números variados, separados por espaço: ");
 		
-		// String valoresTexto = scan.nextLine(); 
-		String valoresTexto = "9 98 41";
+		 String valoresTexto = scan.nextLine(); 
+//		String valoresTexto = "9 98 41 76 5 2 8";
 		
 		tam = contarTamanho(valoresTexto); // calculando o tamanho do vetor
 		
+		ResultadoPiramide resultados = calcularPiramide(tam);
+		
+		if (resultados.tamanhoCorrigido != tam) {
+			tam = resultados.tamanhoCorrigido;
+		}
+		
+		totalLinhas = resultados.totalLinhas;
+		
 		int[] vet = converterVetor(valoresTexto, tam); // transformando em vetor de inteiros
 		
-		imprimirPiramide(vet, tam);
+		imprimirPiramide(vet, tam, totalLinhas);
 		
 	}
 	
+	private static class ResultadoPiramide {
+		int totalLinhas;
+		int tamanhoCorrigido;
+		
+		ResultadoPiramide(int totalLinhas, int tamanhoCorrigido) {
+			this.totalLinhas = totalLinhas;
+			this.tamanhoCorrigido = tamanhoCorrigido;
+		}
+	}
+	
+	private static ResultadoPiramide calcularPiramide(int tam) {
+		int i = 0;
+		
+		int linha = 1, qtdLinha;
+
+		while(i + linha <= tam) { 
+			
+			for (qtdLinha = 1; qtdLinha <= linha; qtdLinha++) {
+				i++;
+			}
+			
+			linha++; 
+		}
+		
+		
+		int contador = 0;
+		
+		if (i < tam) {
+			System.out.println("\nPirâmide incompleta... modificando o tamanho do vetor.");
+			while (i < tam) {
+				i++;
+				contador++;
+			}
+			
+			tam += (linha - contador);
+		}
+		
+		return new ResultadoPiramide(linha, tam);
+	}
 	// método para contar o tamanho do vetor que será criado
 	private static int contarTamanho(String texto) {
 		int i = 0, tam = 0;
@@ -35,12 +83,14 @@ public class Main {
 		
 		tam++; // adiciona +1 ao tamanho para os casos de só ter 1 número ou para contabilizar o último valor, já que não tem espaço após ele.
 		
+		
 		return tam;
 	}
 	
+	
 	// método para converter a String em vetor de int
 	private static int[] converterVetor(String texto, int tam) {
-		
+		int i;
 		
 		String[] valores = texto.split(" "); // dividir cada valor num array de Strings, se tiver "5 10 15", vai ficar {"5", "10", "15}
 		
@@ -51,39 +101,25 @@ public class Main {
 		int[] vet = new int[tam]; // inicializando o tamanho do vetor que vai armazenar os valores
 		
 		
-		for (int i = 0; i < tam; i++)
+		for (i = 0; i < valores.length; i++)
 			vet[i] = Integer.parseInt(valores[i]);
 		
+		while (i < tam) {
+			vet[i] = (int)(Math.random() * 101);
+			i++;
+		}
 		
 		return vet;
 	}
-	private static int contarLinhas(int[] vet, int tam) {
-		int i = 0;
-
-		int linha = 1, qtdLinha;
-
-		while(i + linha <= tam) { 
-			
-			for (qtdLinha = 1; qtdLinha <= linha; qtdLinha++) {
-				i++;
-			}
-			
-			linha++; 
-		}
-			
-		
-		return linha - 1;
-
-	}
 	
 	
-	private static void imprimirPiramide(int[] vet, int tam) {
+	private static void imprimirPiramide(int[] vet, int tam, int totalLinhas) {
 		int i = 0, j = 0, menor, soma = 0;
 		
 		System.out.println("\n-----------------");
 		System.out.println("-- PIRÂMIDE --");
 		
-		int linha = 1, totalLinhas = contarLinhas(vet, tam);
+		int linha = 1;
 
 		int[] menoresValores = new int[totalLinhas];
 		
@@ -108,15 +144,6 @@ public class Main {
 		
 		System.out.println("-----------------");
 		
-		if (i < tam) {
-			System.out.print("Valores que ficaram fora da pirâmide: [");
-			while (i < tam - 1) {
-				System.out.print(vet[i++]+", ");
-			}
-			System.out.println(vet[i]+"]");
-		}
-		
-		
 		System.out.print("Menores valores de cada linha: [");
 		
 
@@ -129,4 +156,6 @@ public class Main {
 		System.out.println("\nSoma dos menores valores de cada linha: " + soma);
 	}
 }
+
+
 
