@@ -10,8 +10,13 @@ public class Main {
 		
 		System.out.print("Digite números variados, separados por espaço: ");
 		
+<<<<<<< HEAD
 		// String valoresTexto = scan.nextLine(); 
 		String valoresTexto = "9 98 41";
+=======
+		 String valoresTexto = scan.nextLine(); 
+//		String valoresTexto = "9 98 41 76 86 4 285 111 127 587 424 3 402 89 22 23 68 57 99 12";
+>>>>>>> 34e91454169693f40909f62dd19d3f791020331d
 		
 		tam = contarTamanho(valoresTexto); // calculando o tamanho do vetor
 		
