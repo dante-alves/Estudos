@@ -35,6 +35,11 @@ public class Employee {
 		salary += salary * (percentage/100);
 	}
 	
+	
+//    public Employee clone() throws CloneNotSupportedException {
+//        return (Employee) super.clone();
+//    }
+	
 	public String toString() {
 		return id
 				+ ", "

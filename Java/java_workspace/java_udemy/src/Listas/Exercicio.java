@@ -9,7 +9,7 @@ import entities.Employee;
 
 public class Exercicio {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CloneNotSupportedException {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
@@ -45,26 +45,29 @@ public class Exercicio {
 		System.out.print("Enter the employee id that will have salary increase: ");
 		int id = sc.nextInt();
 		
-		boolean found = false;
-		int index = 0;
+//		boolean found = false;
+//		int index = 0;
 		
-		//Employee emp = list.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
-		for (i = 0; i < list.size(); i++) {
-			if (list.get(i).getId() == id) {
-				found = true;
-				index = i;
-				break;
-			}
-		}
 		
-		if (found == false) {
+		
+		Employee emp = list.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+		
+//		for (i = 0; i < list.size(); i++) {
+//			if (list.get(i).getId() == id) {
+//				found = true;
+//				index = i;
+//				break;
+//			}
+//		}
+		
+		if (emp == null) {
 			System.out.println("Id not found.");
 		}
 		else {
 			System.out.print("Enter the percentage: ");
 			double percentage = sc.nextDouble();
 			
-			list.get(index).salaryIncrease(percentage);
+			emp.salaryIncrease(percentage);
 		}
 		
 		System.out.println("\nList of employees: ");
@@ -72,6 +75,9 @@ public class Exercicio {
 			System.out.println(employee);
 		}
 		
+		sc.close();
+		
 	}
+	
 
 }
