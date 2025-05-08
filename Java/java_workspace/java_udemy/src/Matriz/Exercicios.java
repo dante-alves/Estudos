@@ -8,7 +8,7 @@ public class Exercicios {
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
 		
-		Exercicios.ex01();
+		Exercicios.ex02();
 		
 	}
 	
@@ -62,6 +62,37 @@ public class Exercicios {
 		sc.close();
 	}
 	
-	
+	public static void ex02() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Tamanho da matriz: ");
+		int n = sc.nextInt();
+		
+		
+		int[][] mat = new int[n][n];
+		
+		
+		
+		for (int l = 0; l < mat.length; l++) {
+			for (int c = 0; c < mat[l].length; c++) {
+				mat[l][c] = sc.nextInt();
+			}
+		}
+		
+		System.out.println("Diagonal principal:");
+		for (int l = 0; l < mat.length; l++) {
+			System.out.print(mat[l][l] + " ");
+		}
+		
+		System.out.println("\nValores negativos:");
+		for (int[] row : mat) {
+			for (int col : row) {
+				if (col < 0)
+					System.out.print(col + " ");
+			}
+		}
+		sc.close();
+		
+	}
 
 }
